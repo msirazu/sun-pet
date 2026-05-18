@@ -17,8 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${poppins.className} h-full antialiased`}
-    >
+      className={`${poppins.className} h-full antialiased`} data-theme='light' suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
         <AppProviders>
           {children}

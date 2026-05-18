@@ -1,2 +1,23 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+
+:root,
+[data-theme="light"] {
+  --accent: oklch(0.7 0.25 260);
+  --success: oklch(0.65 0.15 155);
+  --footer-color: #D87325;
+  --hero-bg: url('https://sun-pet.vercel.app/assets/images/hero-banner.png');
+}
+
+.dark,
+[data-theme="dark"] {
+  --accent: oklch(0.6 0.2 260);
+  --success: oklch(0.75 0.12 155);
+  --footer-color: #7c6e63;
+  --hero-bg: url('https://sun-pet.vercel.app/assets/images/hero-banner.png');
+}
+
+@theme {
+  --color-footer: var(--footer-color);
+  --background-image-hero: var(--hero-bg);
+}

@@ -1,7 +1,7 @@
 import MainFooter from "@/components/layout/footer/MainFooter";
 import MainHeader from "@/components/layout/header/MainHeader";
 
-const MainLayout = ({ children }) => {
+const PetsLayout = ({ children }) => {
     return (
         <div>
             <header className="border-b shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
@@ -17,4 +17,4 @@ const MainLayout = ({ children }) => {
     );
 };
 
-export default MainLayout;
+export default PetsLayout;

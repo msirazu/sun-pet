@@ -12,8 +12,8 @@ const Navbar = () => {
                 <h1 className="font-bold text-3xl">Sun Pet</h1>
             </section>
             <section className="flex gap-2">
-                <NavLinks className={'font-bold'} path={'/'}>Home</NavLinks>
-                <NavLinks path={'/about'}>All Pets</NavLinks>
+                <NavLinks path={'/'}>Home</NavLinks>
+                <NavLinks path={'/pets'}>All Pets</NavLinks>
             </section>
             <section>
                 <UserProfile/>
