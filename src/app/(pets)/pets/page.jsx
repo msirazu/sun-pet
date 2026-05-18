@@ -12,7 +12,7 @@ const PetsPage = async() => {
            <section className="space-y-5">
             <h3 className="text-center font-bold text-xl">Find Your Best Friend</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 mb-5">
-                {pets.map(pet => <PetsCard key={pet._id} pet={pet}/>)}
+                {pets?.map(pet => <PetsCard key={pet._id} pet={pet}/>)}
             </div>
            </section>
         </div>

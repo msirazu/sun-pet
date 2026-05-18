@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 import { ToastContainer } from "react-toastify";
+import 'animate.css';
 
 const AppProviders = ({ children }) => {
     return (
