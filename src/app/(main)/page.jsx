@@ -1,10 +1,13 @@
 import HeroBanner from "@/components/common/HeroBanner";
 import { getPetsData } from "@/lib/allFetchApi";
 import PetsCard from "@/pages/pets/PetsCard";
+import Loading from "../loading";
 
 const Homepage = async() => {
 
   const pets = await getPetsData();
+
+  if (!pets) return <Loading/>
 
   return (
     <>
@@ -17,8 +20,8 @@ const Homepage = async() => {
       <h3 className="font-bold text-center text-2xl my-5">Featured Pets</h3>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-5">
-        {pets.map(pet => <PetsCard key={pet._id} pet={pet}/>)}
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 mb-5">
+        {pets.slice(0,6).map(pet => <PetsCard key={pet._id} pet={pet}/>)}
       </div>
     </section>
     </>
