@@ -1,5 +1,6 @@
 import HeroBanner from "@/components/common/HeroBanner";
 import { getPetsData } from "@/lib/allFetchApi";
+import PetsCard from "@/pages/pets/PetsCard";
 
 const Homepage = async() => {
 
@@ -13,11 +14,11 @@ const Homepage = async() => {
 
     <section className="w-11/12 lg:w-10/12 mx-auto">
       <div>
-      <h3 className="font-bold text-center text-2xl">Featured Pets</h3>
+      <h3 className="font-bold text-center text-2xl my-5">Featured Pets</h3>
       </div>
 
-      <div>
-        {pets.map(pet => pet.petName)}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-5">
+        {pets.map(pet => <PetsCard key={pet._id} pet={pet}/>)}
       </div>
     </section>
     </>
