@@ -10,7 +10,7 @@ const HeroBanner = () => {
                 <p className="text-sm">Explore hundreds of pets waiting for a loving home.</p>
                 <p className="text-sm">Your companion is just a click away.</p>
                 </div>
-                <Button className={'rounded-none'}>Adopt Now</Button>
+                <Button variant="primary" className={'rounded-none'}>Adopt Now</Button>
             </div>
 </div>
     );
