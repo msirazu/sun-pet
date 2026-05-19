@@ -39,6 +39,16 @@ const PetDetailPage = async({ params }) => {
                     <p>Vaccination Status: {vaccinationStatus}</p>
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5">
+                    <p>Location: {location}</p>
+                    <p>Owner Email: {ownerEmail}</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5">
+                    <p>Status: {status}</p>
+                    <p>Adoption Fee: ${adoptionFee}</p>
+                </div>
+
                 <p>Description: {description}</p>
                 </div>
 
