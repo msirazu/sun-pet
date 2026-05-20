@@ -46,6 +46,12 @@ const LoginForm = () => {
         }
     }
 
+    const handleGoogleLogin = async() => {
+        await authClient.signIn.social({
+        provider: "google",
+        });
+    }
+
     return (
         <div className="flex justify-center items-center h-screen bg-transparent transition-colors duration-300">
 
@@ -124,7 +130,7 @@ const LoginForm = () => {
                     <span className="px-3">OR</span>
                 </div>
 
-                <Button 
+                <Button onClick={handleGoogleLogin} 
                     variant="outline" 
                     className="w-full font-semibold border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl"
                 >

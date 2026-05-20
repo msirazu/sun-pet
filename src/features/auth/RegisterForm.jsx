@@ -47,6 +47,12 @@ const RegisterForm = () => {
         }
     }
 
+    const handleGoogleRegister = async() => {
+        await authClient.signIn.social({
+        provider: "google",
+        });
+    }
+
     return (
         <div className="flex justify-center items-center h-screen bg-transparent transition-colors duration-300">
 
@@ -140,7 +146,7 @@ const RegisterForm = () => {
                 </TextField>
 
                 <div className="flex flex-col gap-2 mt-2">
-                    {/* ৪. রিকোয়েস্ট চলার সময় বাটন ডিজেবল করার জন্য isLoading দেওয়া হয়েছে */}
+ 
                     <Button 
                         type="submit" 
                         isLoading={isLoading}
@@ -161,7 +167,7 @@ const RegisterForm = () => {
                     <span className="px-3">OR</span>
                 </div>
 
-                <Button 
+                <Button onClick={handleGoogleRegister} 
                     variant="outline" 
                     className="w-full font-semibold border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl"
                 >

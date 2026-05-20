@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { toast } from "react-toastify";
+import { ArrowRightFromSquare, Gear, LayoutCellsLarge } from "@gravity-ui/icons";
 
 const UserProfile = () => {
     const router = useRouter();
@@ -40,7 +41,8 @@ const UserProfile = () => {
                         <Image
                             width={40}
                             height={40}
-                            src={session?.user?.image || "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=400"}
+                            referrerPolicy='no-referrer'
+                            src={session?.user?.image || "https://cdn-icons-png.flaticon.com/128/2202/2202112.png"}
                             alt="avatar"
                             className="w-10 h-10 rounded-full object-cover ring-2 ring-blue-600/10"
                         />
@@ -56,17 +58,17 @@ const UserProfile = () => {
                             <p className="text-sm truncate text-slate-500">{session?.user?.name}</p>
                             <p className="text-xs truncate text-slate-500">{session?.user?.email}</p>
                         </div>
-                        <Link href="/dashboard" className="px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center gap-3 transition-colors">
-                             Dashboard
+                        <Link href="/user/dashboard" className="px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center gap-3 transition-colors">
+                            <LayoutCellsLarge/> Dashboard
                         </Link>
-                        <Link href="/settings" className="px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center gap-3 transition-colors">
-                             Settings
+                        <Link href="/user/settings" className="px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center gap-3 transition-colors">
+                            <Gear/> Settings
                         </Link>
                         <button
                             onClick={handleLogOut}
                             className="px-4 py-2 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 flex items-center gap-3 transition-colors text-left w-full cursor-pointer"
                         >
-                            Log Out
+                           <ArrowRightFromSquare/> Log Out
                         </button>
                     </div>
                 </div>
