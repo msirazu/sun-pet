@@ -2,11 +2,11 @@ import HeroBanner from "@/components/common/HeroBanner";
 import HowItWorks from "@/components/home/HowItWorks";
 import PetCareTips from "@/components/home/PetCareTips";
 import PetsCard from "@/components/ui/PetsCard";
-import { getPetsData } from "@/lib/allFetchApi";
+import { getFeaturedPets } from "@/lib/allFetchApi";
 
 const Homepage = async() => {
 
-  const pets = await getPetsData();
+  const pets = await getFeaturedPets();
 
   return (
     <>
@@ -20,7 +20,7 @@ const Homepage = async() => {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
-        {pets?.slice(0,6).map(pet => <PetsCard key={pet._id} pet={pet}/>)}
+        {pets?.map(pet => <PetsCard key={pet._id} pet={pet}/>)}
       </div>
     </section>
 
