@@ -1,4 +1,8 @@
+import EditPetModal from "@/components/ui/EditPetModal";
+import PetDeleteModal from "@/components/ui/PetDeleteModal";
 import { publicApi } from "@/lib/apiUrl";
+import { PencilToSquare, TrashBin } from "@gravity-ui/icons";
+import { Button } from "@heroui/react";
 import Image from "next/image";
 
 const PetDetailPage = async({ params }) => {
@@ -15,13 +19,19 @@ const PetDetailPage = async({ params }) => {
     return (
         <div className="grid grid-cols-12 gap-5 w-11/12 lg:w-10/12 mx-auto py-5">
 
-            <section className="col-span-12 md:col-span-8 p-3 border">
+            <section className="col-span-12 md:col-span-8 p-3 border space-y-2">
 
                 <div className="relative w-full aspect-video">
                     <Image src={image} sizes="(max-width: 768px) 100vw, 50vw" fill priority alt={petName} className="object-cover"/>
                 </div>
 
-                <h2 className="text-2xl text-center font-bold my-5">{petName}</h2>
+                <div className="flex justify-between items-center flex-col md:flex-row">
+                <h2 className="text-2xl font-bold my-5">{petName}</h2>
+                <div className="flex gap-2">
+                <EditPetModal pet={pet}/>
+                <PetDeleteModal pet={pet}/>
+                </div>
+                </div>
 
                 <div className="space-y-2">
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5">
