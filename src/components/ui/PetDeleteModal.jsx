@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { TrashBin } from "@gravity-ui/icons";
 
-const PetDeleteModal = ({ pet }) => {
+const PetDeleteModal = ({ pet, onDeleteSuccess }) => {
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
     
@@ -25,8 +25,13 @@ const PetDeleteModal = ({ pet }) => {
             if (data.success && data.data.deletedCount > 0) {
                 toast.success('Deleted Successfully');
                 setIsOpen(false);
-                router.refresh();
-                router.push('/pets'); 
+                
+                if (onDeleteSuccess) {
+                    onDeleteSuccess(id);
+                } else {
+                    router.refresh();
+                    router.push('/pets');
+                }
             } else {
                 toast.error('Failed to delete.');
             }
@@ -43,7 +48,7 @@ const PetDeleteModal = ({ pet }) => {
             </Button>
             <AlertDialog.Backdrop>
                 <AlertDialog.Container>
-                    <AlertDialog.Dialog className="sm:max-w-[400px]">
+                    <AlertDialog.Dialog className="sm:max-w-100">
                         <AlertDialog.CloseTrigger />
                         <AlertDialog.Header>
                             <AlertDialog.Icon status="danger" />

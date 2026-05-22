@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FileText, LayoutCellsLarge, ListCheck, Plus } from '@gravity-ui/icons';
+import { FileText, Gear, LayoutCellsLarge, ListCheck, Plus } from '@gravity-ui/icons';
 
 const DashboardLeftSidebar = () => {
     const pathname = usePathname();
@@ -11,6 +11,7 @@ const DashboardLeftSidebar = () => {
         { name: "My Requests", href: "/user/dashboard/my-requests", icon: <FileText size={20} /> },
         { name: "Add Pet", href: "/user/dashboard/add-pet", icon: <Plus size={20} /> },
         { name: "My Listings", href: "/user/dashboard/my-listings", icon: <ListCheck size={20} /> },
+        { name: "Settings", href: "/user/dashboard/settings", icon: <Gear size={20} /> },
     ];
 
     return (
