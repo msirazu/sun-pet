@@ -31,11 +31,11 @@ const SidebarWrapper = ({ children }) => {
                     <DashboardHeader toggleSidebar={() => setIsOpen(!isOpen)} />
                 </header>
                 
-                <main className="flex-1 p-4">
+                <main className="flex-1 p-4 dark:bg-slate-800">
                     {children}
                 </main>
 
-                <footer className="p-4 border-t">
+                <footer className="p-4 border-t dark:bg-slate-700">
                     <DashboardFooter />
                 </footer>
             </div>

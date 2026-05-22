@@ -127,8 +127,7 @@ const AddPetForm = () => {
                     <TextArea placeholder="Tell us about the pet..." />
                     <FieldError />
                 </TextField>
-
-                {/* Hidden Fields */}
+                
                 <input type="hidden" name="status" value="available" />
                 <input type="hidden" name="ownerEmail" value="user@example.com" />
 

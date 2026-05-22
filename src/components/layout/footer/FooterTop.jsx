@@ -31,12 +31,12 @@ const FooterTop = () => {
             </Link>
           </li>
           <li>
-            <Link href="/add-pet" className="hover:text-yellow-200 transition-all duration-300 flex items-center gap-1">
+            <Link href="/user/dashboard/add-pet" className="hover:text-yellow-200 transition-all duration-300 flex items-center gap-1">
               <span>›</span> Add Pet
             </Link>
           </li>
           <li>
-            <Link href="/my-requests" className="hover:text-yellow-200 transition-all duration-300 flex items-center gap-1">
+            <Link href="/user/dashboard/my-requests" className="hover:text-yellow-200 transition-all duration-300 flex items-center gap-1">
               <span>›</span> My Requests
             </Link>
           </li>

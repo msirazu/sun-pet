@@ -33,7 +33,7 @@ const DashboardLeftSidebar = () => {
             }`}
         >
             {item.icon} 
-            <span>{item.name}</span> {/* এখানে hidden md:inline সরিয়ে দিন যাতে সব সময় নাম দেখা যায় */}
+            <span>{item.name}</span>
         </Link>
     ))}
 </div>
