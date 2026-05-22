@@ -54,9 +54,9 @@ const RegisterForm = () => {
     }
 
     return (
-        <div className="flex justify-center items-center h-screen bg-transparent transition-colors duration-300">
+        <div className="flex justify-center items-center h-screen bg-transparent transition-colors duration-300 mt-10 mb-15">
 
-            <Form onSubmit={handleRegister} className="flex w-96 flex-col gap-4 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl shadow-sm bg-white dark:bg-slate-800/50 backdrop-blur-md">
+            <Form onSubmit={handleRegister} className="flex w-full max-w-96 mx-4 md:mx-0 flex-col gap-4 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl shadow-sm bg-white dark:bg-slate-800/50 backdrop-blur-md">
                 
                 <h2 className="text-2xl font-black text-center text-slate-800 dark:text-slate-100 mb-1">
                     Create an Account

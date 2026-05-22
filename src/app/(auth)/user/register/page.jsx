@@ -2,7 +2,7 @@ import RegisterForm from "@/features/auth/RegisterForm";
 
 const RegisterPage = () => {
     return (
-        <div className="p-5">
+        <div>
             <RegisterForm/>  
         </div>
     );
