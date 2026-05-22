@@ -12,3 +12,9 @@ export const getFeaturedPets = async() => {
     const data = await res.json();
     return data.data;
 }
+
+export const getMyRequestData = async() => {
+    const res = await fetch(`${publicApi}/user/dashboard/my-request`, {cache: 'no-store'});
+    const data = await res.json();
+    return data.data;
+}
