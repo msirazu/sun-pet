@@ -1,12 +1,15 @@
 import PetsCard from "@/components/ui/PetsCard";
+import PetsFiltering from "@/components/ui/PetsFiltering";
 import { getPetsData } from "@/lib/allFetchApi";
 
-const PetsPage = async() => {
-    const pets = await getPetsData();
+const PetsPage = async({ searchParams }) => {
+    const sParams = await searchParams;
+    const query = new URLSearchParams(sParams).toString();
+    const pets = await getPetsData(query);
     return (
         <div className="w-11/12 lg:w-10/12 mx-auto space-y-5">
            <section>
-            
+             <PetsFiltering/>
            </section>
 
            <section className="space-y-5">

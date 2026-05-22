@@ -1,7 +1,7 @@
 const DashboardPage = () => {
     return (
         <div>
-            dfs
+            my dashboard
         </div>
     );
 };

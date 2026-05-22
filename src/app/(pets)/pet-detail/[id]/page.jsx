@@ -1,5 +1,6 @@
 import EditPetModal from "@/components/ui/EditPetModal";
 import PetDeleteModal from "@/components/ui/PetDeleteModal";
+import AdoptionForm from "@/features/dashboard/AdoptionForm";
 import { publicApi } from "@/lib/apiUrl";
 import { PencilToSquare, TrashBin } from "@gravity-ui/icons";
 import { Button } from "@heroui/react";
@@ -65,7 +66,7 @@ const PetDetailPage = async({ params }) => {
             </section>
 
             <section className="col-span-12 md:col-span-4 p-3 border">
-
+                <AdoptionForm pet={pet}/>
             </section>
 
         </div>
