@@ -4,7 +4,7 @@ import UserProfile from "./UserProfile";
 
 const Navbar = () => {
     return (
-        <nav className="flex flex-col md:flex-row justify-between items-center gap-3 py-5">
+        <nav className="flex flex-col md:flex-row justify-between items-center gap-3 py-5 px-6">
 
             <section className="flex items-center gap-2">
                 <div>

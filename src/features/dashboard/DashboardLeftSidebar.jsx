@@ -21,22 +21,22 @@ const DashboardLeftSidebar = () => {
                 User Panel
             </h2>
             
-            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0">
-                {menuItems.map((item) => (
-                    <Link 
-                        key={item.name} 
-                        href={item.href} 
-                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all whitespace-nowrap ${
-                            pathname === item.href 
-                                ? "bg-blue-50 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 font-semibold" 
-                                : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
-                        }`}
-                    >
-                        {item.icon} 
-                        <span className="hidden md:inline">{item.name}</span>
-                    </Link>
-                ))}
-            </div>
+            <div className="flex flex-col gap-2">
+    {menuItems.map((item) => (
+        <Link 
+            key={item.name} 
+            href={item.href} 
+            className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
+                pathname === item.href 
+                    ? "bg-blue-50 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 font-semibold" 
+                    : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+            }`}
+        >
+            {item.icon} 
+            <span>{item.name}</span> {/* এখানে hidden md:inline সরিয়ে দিন যাতে সব সময় নাম দেখা যায় */}
+        </Link>
+    ))}
+</div>
         </nav>
     );
 };

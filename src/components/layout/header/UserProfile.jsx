@@ -68,7 +68,7 @@ const UserProfile = () => {
                 {isOpen && (
     <div 
         onMouseLeave={() => setIsOpen(false)}
-        className="absolute right-0 left-0 md:left-auto top-14 w-50 sm:w-56 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl flex flex-col py-2 z-99 animate-in fade-in slide-in-from-top-2 duration-200"
+        className="absolute right-0 md:left-auto top-14 w-50 sm:w-56 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl flex flex-col py-2 z-99 animate-in fade-in slide-in-from-top-2 duration-200"
     >
         <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-700">
             <p className="font-bold text-sm">Welcome back!</p>
