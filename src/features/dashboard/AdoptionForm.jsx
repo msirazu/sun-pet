@@ -16,7 +16,7 @@ const AdoptionForm = ({ pet }) => {
 
     useEffect(() => {
         if (session?.user?.email) {
-            fetch(`${publicApi}/check-request?email=${session.user.email}&petId=${pet._id}`)
+            fetch(`${publicApi}/user/dashboard/adoption-requests/:petId?email=${session.user.email}&petId=${pet._id}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.exists) setIsRequested(true);

@@ -2,28 +2,42 @@ import EditPetModal from "@/components/ui/EditPetModal";
 import PetDeleteModal from "@/components/ui/PetDeleteModal";
 import AdoptionForm from "@/features/dashboard/AdoptionForm";
 import { publicApi } from "@/lib/apiUrl";
-import { PencilToSquare, TrashBin } from "@gravity-ui/icons";
-import { Button } from "@heroui/react";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Image from "next/image";
 
 const PetDetailPage = async({ params }) => {
 
     const { id } = await params;
 
-    const res = await fetch(`${publicApi}/pet-detail/${id}`);
+    const { token } = await auth.api.getToken({
+        headers: await headers(),
+    });
+
+    const res = await fetch(`${publicApi}/pet-detail/${id}`, {
+        cache: 'no-store',
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    });
+
     const data = await res.json();
     const pet = data.data;
 
     if (!pet) return null;
 
     const { _id, petName, species, breed, age, gender, image, healthStatus, vaccinationStatus, location, adoptionFee, description, ownerEmail, status } = pet;
+
+    const validImage = typeof image === "string" &&
+    (image.startsWith("/") || image.startsWith("http")) ? image : "/assets/pets/fallback.jpg";
+
     return (
         <div className="grid grid-cols-12 gap-5 w-11/12 lg:w-10/12 mx-auto py-5">
 
             <section className="col-span-12 md:col-span-8 p-3 border space-y-2">
 
                 <div className="relative w-full aspect-video">
-                    <Image src={image} sizes="(max-width: 768px) 100vw, 50vw" fill priority alt={petName} className="object-cover"/>
+                    <Image src={validImage} sizes="(max-width: 768px) 100vw, 50vw" fill priority alt={petName} className="object-cover"/>
                 </div>
 
                 <div className="flex justify-between items-center flex-col md:flex-row">
