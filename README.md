@@ -4,7 +4,7 @@ Sun Pet is a full-stack web application designed to connect pet lovers with pets
 
 ## 🚀 Live Demo
 
-https://sun-pet.vercel.app/
+https://sun-pet.vercel.app
 
 ## ✨ Key Features
 
@@ -26,7 +26,7 @@ Backend: Node.js, Express.js
 
 Database: MongoDB
 
-Authentication: Better Auth
+Authentication: Better Auth, JWT
 
 ## 📦 Main NPM Packages Used
 
@@ -34,4 +34,4 @@ react, next, tailwindcss
 
 react-toastify
 
-express, mongodb
+express, mongodb, jwt

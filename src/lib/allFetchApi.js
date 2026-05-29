@@ -1,12 +1,9 @@
 import { publicApi } from "./apiUrl";
 
-export const getPetsData = async(query = '', token) => {
+export const getPetsData = async(query = '') => {
     const url = query ? `${publicApi}/pets?${query}` : `${publicApi}/pets`;
     const res = await fetch(url, {
         cache: 'no-store',
-        headers: {
-            authorization: `Bearer ${token}`
-        }
     });
     const data = await res.json();
     return data.data;
